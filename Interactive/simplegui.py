@@ -36,6 +36,10 @@ class Frame(object):
         """ input_handler(text) """
         print "Frame add input box with handler: %s" % (input_handler)
 
+    def add_button(self, text, button_handler, width=88):
+        """ button_handler() """
+        print "Frame add button: %s" % text
+
     """Helper functions"""
     def get_canvas_textwidth(self, font_size, font):
         return 88 # Just a magic number
