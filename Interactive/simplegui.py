@@ -6,6 +6,10 @@
 '''A pseudo module of simplegui, Only interfaces
 '''
 
+# KEY_MAP
+KEY_MAP = dict(zip("abcdefghijklmnopqrstuvwxyz0123456789", range(0, 36)))
+KEY_MAP = dict(KEY_MAP.items() + [("left", 88), ("right", 89), ("up", 90), ("down", 91)])
+
 # Frame
 def create_frame(title, canvas_wid, canvas_hei, pane_wid=88):
     print "Frame create frame with cwid=%d chei=%d pwid=%d" % (canvas_wid, canvas_hei, pane_wid)
@@ -14,6 +18,9 @@ def create_frame(title, canvas_wid, canvas_hei, pane_wid=88):
 def create_timer(interval, timer_handler):
     """ timer_handler() """
     return Timer(interval, timer_handler)
+
+def load_image(url):
+    return url
 
 class Frame(object):
     def __init__(self, title, canvas_wid, canvas_hei, pane_wid=88):
@@ -30,7 +37,20 @@ class Frame(object):
         print "Frame started"
 
     def set_draw_handler(self, handler):
+        """ draw_handler(canvas) """
         print "Frame set draw handler:", str(handler)
+
+    def set_keydown_handler(self, handler):
+        """ keydown_handler(key) """
+        print "Frame set keydown handler"
+
+    def set_keyup_handler(self, handler):
+        """ keyup_handler(key) """
+        print "Frame set keyup handler"
+
+    def set_mouseclick_handler(self, mouse_handler):
+        """ mouse_handler(position) -- position = [x, y] """
+        print "Frame set mouse handler"
 
     def add_input(self, text, input_handler, width):
         """ input_handler(text) """
@@ -57,6 +77,9 @@ class Canvas(object):
 
     def draw_circle(self, center_point, radius, line_width, line_color, fill_color=None):
         print "Draw circle: O%s R%s" % (str(center_point), str(radius))
+
+    def draw_image(self, image, center_src, size_src, center_dst, size_dst, rotation=0):
+        print "Draw image {} at {} with size {} of source to {} with size {}".format(image, center_src, center_dst, center_dst, size_dst)
 
 # Timer
 class Timer(object):
