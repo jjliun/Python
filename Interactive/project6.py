@@ -1,5 +1,10 @@
-# Mini-project #6 - Blackjack
-
+#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
+# Filename      : project6.py
+# Author        : Yang Leo (JeremyRobturtle@gmail.com)
+# Last Modified : 2014-05-29
+'''Mini-project #6 - Blackjack
+'''
 import simplegui
 import random
 

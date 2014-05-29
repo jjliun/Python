@@ -1,4 +1,10 @@
-# program template for Spaceship
+#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
+# Filename      : project7.py
+# Author        : Yang Leo (JeremyRobturtle@gmail.com)
+# Last Modified : 2014-05-29
+'''program template for Spaceship
+'''
 import simplegui
 import math
 import random

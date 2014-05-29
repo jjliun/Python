@@ -1,5 +1,10 @@
-# Implementation of classic arcade game Pong
-
+#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
+# Filename      : project4.py
+# Author        : Yang Leo (JeremyRobturtle@gmail.com)
+# Last Modified : 2014-05-29
+'''Implementation of classic arcade game Pong
+'''
 import simplegui
 import random
 
