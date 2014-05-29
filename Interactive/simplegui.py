@@ -22,6 +22,9 @@ def create_timer(interval, timer_handler):
 def load_image(url):
     return url
 
+def load_sound(url):
+    return Sound(url)
+
 class Frame(object):
     def __init__(self, title, canvas_wid, canvas_hei, pane_wid=88):
         self.title = title
@@ -79,7 +82,14 @@ class Canvas(object):
         print "Draw circle: O%s R%s" % (str(center_point), str(radius))
 
     def draw_image(self, image, center_src, size_src, center_dst, size_dst, rotation=0):
-        print "Draw image {} at {} with size {} of source to {} with size {}".format(image, center_src, center_dst, center_dst, size_dst)
+        print "Draw image {} at {} with size {} of source to {} with size {}".format(image, center_src, size_src, center_dst, size_dst)
+
+class Sound:
+    def __init__(self, url):
+        self.url = url
+
+    def set_volume(self, radio):
+        self.vol = radio
 
 # Timer
 class Timer(object):
@@ -88,4 +98,4 @@ class Timer(object):
         self.timer_handler = timer_handler
 
     def start(self):
-        print "Timer started with handler: %s" % str(timer_handler)
+        print "Timer started with handler: %s" % str(self.timer_handler)
